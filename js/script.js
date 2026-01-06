@@ -77,14 +77,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化：显示高中时期内容
     showSection('high-school');
     
-    // 导航链接事件监听
-    const navLinks = document.querySelectorAll('.nav-link');
+    // 汉堡菜单交互
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburgerMenu.addEventListener('click', function() {
+        // 切换汉堡菜单状态
+        this.classList.toggle('active');
+        // 切换导航菜单显示状态
+        navMenu.classList.toggle('active');
+    });
+    
+    // 点击导航链接后关闭菜单
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+            
+            // 关闭导航菜单
+            hamburgerMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+            
+            // 处理导航链接点击
             const section = this.getAttribute('data-section');
             if (section) {
                 showSection(section);
+            }
+            
+            // 处理历史数据链接点击
+            const year = this.getAttribute('data-year');
+            if (year) {
+                showStats(year);
+                showSection('stats');
             }
         });
     });
