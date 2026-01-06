@@ -10,6 +10,18 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
+    font-size: 16px;
+}
+
+/* 确保所有图片和视频在移动端不会溢出容器 */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 修复iframe在移动端的显示问题 */
+iframe {
+    max-width: 100%;
 }
 
 /* 动态背景 */
@@ -480,6 +492,10 @@ body {
         padding: 1rem;
     }
     
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
     .nav-menu {
         flex-direction: column;
         gap: 0;
@@ -492,6 +508,8 @@ body {
     
     .nav-link {
         text-align: center;
+        padding: 0.8rem 0;
+        font-size: 1rem;
     }
     
     .dropdown {
@@ -499,42 +517,118 @@ body {
         width: 100%;
     }
     
+    .dropdown a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .hero {
+        padding: 3rem 1rem;
+    }
+    
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
     }
     
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .content-section {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .content-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .content-card {
+        padding: 1.5rem;
+        font-size: 0.95rem;
     }
     
     .video-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .video-card h4 {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .video-thumbnail {
+        height: 180px;
     }
     
     .stats-card {
         min-width: auto;
+        width: 100%;
         padding: 2rem 1rem;
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-item .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .player-content {
+        width: 95%;
+        height: 70%;
+        max-height: 500px;
     }
 }
 
 @media (max-width: 480px) {
     .hero h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .content-section {
-        padding: 1.5rem;
+        padding: 1.2rem;
+        margin: 0.5rem;
     }
     
     .content-card {
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+    
+    .content-image {
+        margin-bottom: 1rem;
     }
     
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .video-thumbnail {
+        height: 150px;
+    }
+    
+    .play-btn {
+        font-size: 3rem;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .footer {
+        padding: 1.5rem;
+    }
+    
+    .footer p {
+        font-size: 0.9rem;
     }
 }
